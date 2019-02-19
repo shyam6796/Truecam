@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:id="@+id/linear_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary">
+
+            <!--<ImageView-->
+                <!--android:id="@+id/custom_actionbar_back"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="10dp"-->
+                <!--android:src="@drawable/actionbar_back" />-->
+
+            <TextView
+                android:id="@+id/custom_actionbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="DashBoard"
+                android:textSize="16dp"
+                android:gravity="center"
+                android:paddingRight="50dp"
+                android:textColor="@color/white"
+                android:background="@color/colorPrimary"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/custom_actionbar_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_history" />
+            <ImageView
+                android:id="@+id/custom_actionbar_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:src="@drawable/ic_person_outline_black_24dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dashboard_image_search_txt"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="50dp">
+                <com.craftbox.imagesearch.Custom.CustomDrawableTextview
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/dashboard_add_image_txt"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:drawableRight="@drawable/ic_add_circle_outline_black_24dp"
+                    android:background="@drawable/editgray"
+                    android:id="@+id/dashboard_add_image_txt" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@color/edittext"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OR"
+                    android:textColor="#604c48"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@color/edittext"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="20dp">
+
+                <com.craftbox.imagesearch.Custom.CustomDrawableTextview
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/dashboard_search_image_txt"
+                    android:textColor="@color/black"
+                    android:inputType="textPersonName"
+                    android:textSize="14dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:paddingRight="20dp"
+                    android:paddingLeft="20dp"
+                    android:drawableRight="@drawable/ic_search_black_24dp"
+                    android:background="@drawable/editgray"
+                    android:id="@+id/dashboard_search_image_txt" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

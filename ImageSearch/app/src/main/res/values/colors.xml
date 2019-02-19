@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#018a7f</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="Colorstatusbar">#FF077970</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#e7e7e7</color>
+    <color name="navigationDrawer">#000000</color>
+    <color name="textMain">#323a45</color>
+    <color name="edittext">#736866</color>
+    <color name="view_divider_color">#bababa</color>
+    <color name="view_divider_color_2">#DADADA</color>
+    <color name="transparent">#00000000</color>
+    <color name="GrayWhite">#d5d6d9</color>
+</resources>
