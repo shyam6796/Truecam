@@ -1,0 +1,185 @@
+<?php
+$page_id="[[:PAGE_ID:]]";
+include("connect.php");
+
+// PAGE DECLARATION
+$main_page 	= "[[:MAIN_PAGE:]]";
+$page 		= "[[:PAGE_SLUG:]]";
+$page_title	= "[[:PAGE_TITLE:]]";
+$page_hierarchy=[[:PAGE_HIERARCHY:]];
+$success_msg=array();
+$error_msg=array();
+// PAGE DECLARATION
+
+// INCLUDE CLASS
+[[:PAGE_CLASS:]]
+$mode=isset($_REQUEST['MODE'])?$_REQUEST['MODE']:"a";
+
+// Variable Definations
+[[:PAGE_VARIABLE_DEFINATION:]]
+
+if(isset($_REQUEST['submit'])){
+	// Variable Declaration
+	// GET SUBMITTED FORM VALUES	
+	[[:PAGE_VARIABLE_DECLARATION:]]
+	
+	if($mode=='a')
+	{
+		[[:PAGE_ADD:]]
+	}
+	else if($mode=='e')
+	{
+		[[:PAGE_EDIT:]]
+	}
+	else if($mode=='d')
+	{
+		//[[:PAGE_DELETE:]]
+	}
+	else if($mode=='a')
+	{
+		//[[:PAGE_ACTIVE:]]
+	}
+}
+
+if($mode=="e")
+{
+	// GET REQUIRED VALUE FROM DATABASE
+	[[:PAGE_VARIABLE_FETCHING_LOGIC:]]
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8" />
+        <title><?php echo SITETITLE; ?> | [[:PAGE_TITLE:]]</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <?php include("include_css.php");?>
+		<!-- BEGIN PAGE LEVEL PLUGINS -->
+		[[:REQUIRED_CSS:]]		
+		<!-- END PAGE LEVEL STYLES -->
+    </head>
+    <!-- END HEAD -->
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white page-md">
+        <div class="page-wrapper">
+			<?php include("top.php");?>
+            <!-- BEGIN HEADER & CONTENT DIVIDER -->
+            <div class="clearfix"> </div>
+            <!-- END HEADER & CONTENT DIVIDER -->
+            <!-- BEGIN CONTAINER -->
+            <div class="page-container">
+			   <?php include('sidebar.php'); ?>	
+			   <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <!-- BEGIN CONTENT BODY -->
+                    <div class="page-content">
+                        <!-- BEGIN PAGE HEADER-->                        
+                        <?php $system->changeThemeMenu();?>
+                        <?php $system->pageBar($page_hierarchy);?> 
+                        <!-- BEGIN PAGE TITLE-->
+                        <h1 class="page-title"> [[:PAGE_TITLE:]]
+                            <small>[[:PAGE_DESCRIPTION:]]</small>
+                        </h1>
+                        <!-- END PAGE TITLE-->
+                        <!-- END PAGE HEADER-->
+                        <div class="row">
+							<div class="col-md-12">
+								<?php 
+								if(!empty($success_msg)){
+									?>			
+									<div class="alert alert-success alert-dismissable"> <i class="fa fa-check"></i>
+										<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+										<?php 
+										foreach($success_msg as $s)
+										{
+										?>
+										<b>Success! </b><?php echo $s; ?>
+										<?php }?>
+									</div>
+									<?php
+								    }
+									if(!empty($error_msg)){
+									?>
+									<div class="alert alert-danger alert-dismissable"> <i class="fa fa-ban"></i>
+										<button class="close" aria-hidden="true" data-dismiss="alert" type="button">×</button>
+										<?php 
+										foreach($error_msg as $e)
+										{
+										?>
+										<b>Error! </b><?php echo $e; ?>
+										<?php 
+										}
+										?>
+									</div>
+									<?php
+									}
+									?>
+							</div>
+                            
+                        </div>						
+                        <!-- END PAGE HEADER-->
+                        <div class="row">
+						<!-- FORM START -->
+						<form method="POST" role="form" id="[[:FORM_ID:]]" name="[[:FORM_NAME:]]" class="[[:FORM_CLASS:]]" action="[[:FORM_ACTION:]]">
+                            <div class="col-md-6 ">
+                                <!-- BEGIN SAMPLE FORM PORTLET-->
+                                <div class="portlet light bordered">
+                                    <div class="portlet-title">
+                                        <div class="caption font-red-sunglo">
+                                            <span class="caption-subject bold uppercase"> [[:FORM_TITLE:]]</span>
+                                        </div>
+                                        <div class="actions">
+                                           
+											<button type="submit" name="submit" class="btn blue">Submit</button>                        
+											<a class="btn btn-circle btn-icon-only btn-default fullscreen" href="javascript:;">                                                
+                                            </a> 											
+                                        </div>
+                                    </div>
+                                    <div class="portlet-body form">
+											[[:FORM_CONTENT:]]
+                                            <div class="form-actions noborder">
+                                                <button type="submit" name="submit" class="btn blue">Submit</button>
+                                                <button type="button" class="btn default">Cancel</button>
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- END SAMPLE FORM PORTLET-->
+                                
+                            </div>
+							</form>
+							<!-- FORM END -->
+                         </div>
+                        
+                    </div>
+                    <!-- END CONTENT BODY -->
+                </div>
+                <!-- END CONTENT -->
+                 <?php include('rightbar.php'); ?>
+            </div>
+            <!-- END CONTAINER -->
+             <?php include('footer.php'); ?>
+        </div>
+        <!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+		
+		<?php include('include_js.php');?>
+ 
+ <!-- START PAGELEVEL JS -->
+  [[:REQUIRED_JS:]]
+<script>
+  $.validate({
+	lang: 'en'
+  });
+</script>	
+<!-- END PAGELEVEL JS -->
+    </body>
+</html>	

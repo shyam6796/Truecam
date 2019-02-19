@@ -1,0 +1,58 @@
+<?php 
+// Parsley JS
+$validator=array(
+	'required'=>'required'
+	'minlength'=>'data-parsley-minlength=[[:X:]]',
+	'maxlength'=>'data-parsley-maxlength=[[:X:]]',
+	'email'=>'data-parsley-type="email"',
+	'url'=>'data-parsley-url="url"',
+	'number'=>'data-parsley-type="number"',
+	'digits'=>'data-parsley-type="digits"',
+	'alphanum'=>'data-parsley-type="alphanum"',
+	'length'=>'data-parsley-length=[[:X:]]',
+	'range'=>'data-parsley-range=[[:X:]]',
+	'min'=>'data-parsley-min=[[:X:]]',
+	'max'=>'data-parsley-max=[[:X:]]',
+	'mincheck'=>'data-parsley-mincheck=[[:X:]]',
+	'maxcheck'=>'data-parsley-maxcheck=[[:X:]]',
+	'check'=>'data-parsley-check=[[:X:]]',
+	'equalto'=>'data-parsley-equalto=[[:X:]]',
+)
+$validator_messages=array(
+	'required'=>'required'
+	'minlength'=>'data-parsley-minlength-message=',
+	'maxlength'=>'data-parsley-maxlength-message=',
+	'email'=>'data-validate-type-message=',
+	'url'=>'data-parsley-url-message=',
+	'number'=>'data-parsley-type-message=',
+	'digits'=>'data-parsley-type-message=',
+	'alphanum'=>'data-parsley-type-message=',
+	'length'=>'data-parsley-length-message=',
+	'range'=>'data-parsley-range-message=',
+	'min'=>'data-parsley-min-message=',
+	'max'=>'data-parsley-max-message=',
+	'mincheck'=>'data-parsley-mincheck-message=',
+	'maxcheck'=>'data-parsley-maxcheck-message=',
+	'check'=>'data-parsley-check-message=',
+	'equalto'=>'data-parsley-equalto-message=',
+)
+$validator_extra=array(
+	'required'=>''
+	'minlength'=>'minlength="[[:X:]]"',
+	'maxlength'=>'maxlength="[[:X:]]"',
+	'email'=>'type="email"',
+	'url'=>'type="url"',
+	'number'=>'type="number"',
+	'digits'=>'',
+	'alphanum'=>'',
+	'length'=>'',
+	'range'=>'type="range"',
+	'min'=>'min="<<[[:X:]>>"',
+	'max'=>'max="<<[:X:]>>"',
+	'mincheck'=>'',
+	'maxcheck'=>'',
+	'check'=>'',
+	'equalto'=>'',
+);
+
+?>

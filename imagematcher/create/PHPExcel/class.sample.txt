@@ -1,0 +1,108 @@
+<?php
+class :class_name extends Functions
+{
+	public $detail=array();
+	public $db;
+	public $ctable=:table;
+	public $primary_column=:primary_column;
+	// Public Varibale
+	:column_variable_declaration
+	public $valid_keys=array(:valid_keys);
+	function __construct($id="") 
+	{
+		$db = new Functions();
+		$conn = $db->connect();
+		$this->db=$db;		  		
+    	}
+	function validateKey($detail)
+	{
+		$error=array();
+		foreach($detail as $key=>$value)
+		{
+			if(!in_array($key,$this->valid_keys))
+			{
+				$error[]=$key;
+			}
+		}
+		
+		if(empty($error))
+		{
+			$result=array("ack"=>1);
+			return $result;
+		}
+		else
+		{
+			$result=array("ack"=>0,"error"=>$error);
+			return $result;
+		}
+	}
+	function update($detail=array(),$primary_key)
+	{
+		
+		// :require_column_name
+		
+		$detail=$this->db->cleanArray($detail);
+		$validateKey=$this->validateKey($detail);		
+		if($validateKey['ack']==1)
+		{
+			// check required column validation
+			if(!empty($detail)&& $primary_key!="")
+			{
+				// count record from $primary_key
+				$count=$this->count:table($this->primary_column,$primary_key);
+				if($count>=1)
+				{
+					$where=$this->primary_column."=".$primary_key;
+					$isUpdated=$this->db->rp_update($this->ctable,$detail,$where,0);
+					if($isUpdated)
+					{
+						$reply=array("ack"=>1,"developer_msg"=>":update_success_message","ack_msg"=>":update_success_message");
+						return $reply;
+					}
+					else
+					{
+						$reply=array("ack"=>0,"developer_msg"=>":update_fail_message","ack_msg"=>":update_fail_message");
+						return $reply;
+					}
+				}
+				else
+				{
+					$reply=array("ack"=>0,"developer_msg"=>"No Record Found To Update","ack_msg"=>"Record Deleted!!");
+					return $reply;
+				}
+				
+			}
+			else
+			{
+				$reply=array("ack"=>0,"error"=>$validateKey['error'],"developer_msg"=>"Invalid Key","ack_msg"=>"Internal Error!! Try later");
+				return $reply;
+			}
+		}
+		else
+		{
+			$reply=array("ack"=>0,"error"=>$validateKey['error'],"developer_msg"=>"Invalid Key","ack_msg"=>"Internal Error!! Try later");
+				return $reply;
+		}
+		
+	}
+	
+	function getRequiredColumns($required_columns=array())
+	{
+		if(!empty($required_columns))
+		{
+			$required_columns_string=implode(",",$required_columns);
+			return $required_columns_string;
+		}
+		else
+		{
+			return "*";
+		}
+	}
+	
+	function countAdmin($key,$value)
+	{		
+		$countAdmin = $this->db->rp_getTotalRecord($this->cptable,$key."=".$value,0);
+		return $countAdmin;	
+	}
+}
+?>

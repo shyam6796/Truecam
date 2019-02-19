@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sidebar>
+	<group
+		page_id="400"
+		title="Dashboard"
+		id="nav_dashboard"
+		url="dashboard.php"
+		icon="icon icon-home">
+		<item
+			id="nav_shop"
+			url="dashboard.php"
+			icon="icon icon-home">
+				Home
+		</item>
+	</group>
+	<group
+		page_id="507"
+		title="User"
+		id="nav_user"
+		url="user_manage.php"
+		icon="fa fa-user">
+		<item
+			id="nav_user"
+			url="user_manage.php"
+			icon="fa fa-user">
+				Manage Users
+		</item>
+       
+	</group>
+    <!--group
+		page_id="513"
+		title="Bus"
+		id="nav_bus"
+		url="bus_manage.php"
+		icon="fa fa-bus">
+		<item
+			id="nav_bus"
+			url="bus_manage.php"
+			icon="fa fa-bus">
+				Manage Buses
+		</item>
+        <item
+			id="nav_bus"
+			url="bus_crud.php"
+			icon="fa fa-plus">
+				Add/Edit Bus
+		</item>
+	</group>
+     <group
+		page_id="514"
+		title="Bus stops"
+		id="nav_busstop"
+		url="busstop_manage.php"
+		icon="fa fa-map-marker ">
+		<item
+			id="nav_bus"
+			url="busstop_manage.php"
+			icon="fa fa-map-marker ">
+				Manage Bus stops
+		</item>
+         <item
+			id="nav_busstop"
+			url="busstop_crud.php"
+			icon="fa fa-plus">
+				Add/Edit Bus stop
+		</item>
+	</group -->
+      <group
+		page_id="516"
+		title="Image"
+		id="nav_image"
+		url="image_master_manage.php"
+		icon="fa fa-image">
+		<item
+			id="nav_api"
+			url="image_master_manage.php"
+			icon="fa fa-image">
+			   Manage Image
+		</item>
+	</group>
+	<group
+		page_id="517"
+		title="Department"
+		id="nav_department"
+		url="department_manage.php"
+		icon="fa fa-image">
+		<item
+			id="nav_api"
+			url="department_manage.php"
+			icon="fa fa-image">
+			   Manage Department
+		</item>
+	</group>
+	<group
+		page_id="501"
+		title="Developer Options"
+		id="nav_api"
+		url="api_manage.php"
+		icon="fa  fa-connectdevelop ">
+		<item
+			id="nav_api"
+			url="api_manage.php"
+			icon="fa fa-android ">
+			   View APIs
+		</item>
+
+	</group>
+	
+	
+</sidebar>

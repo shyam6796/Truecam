@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tiles>
+	
+		<item
+			title="Users"
+			count_table="user"
+			count_condition="isDelete=0"
+			id="dashboard_user"		
+			url="user_manage.php"
+			color="blue"
+			icon="fa fa-user">
+		</item>
+		<!--item
+			title="Bus Stops"
+			count_table="bus_stop"
+			count_condition="isDelete=0"
+			id="dashboard_executive"		
+			url="busstop_manage.php"
+			color="green"
+			icon="fa fa-map">
+		</item>
+		<item
+			title="Buses"
+			count_table="bus"
+			count_condition="isDelete=0"
+			id="dashboard_event"		
+			url="bus_manage.php"
+			color="red"
+			icon="fa fa-bus">
+		</item-->		
+		<item
+			title="Image"
+			count_table="image_master"
+			count_condition="isDelete=0"
+			id="dashboard_Imaget"		
+			url="image_master_manage.php"
+			color="red"
+			icon="fa fa-image">
+		</item>	
+		<item
+			title="Depertment"
+			count_table="department"
+			count_condition="isDelete=0"
+			id="dashboard_departmentt"		
+			url="department_manage.php"
+			color="green"
+			icon="fa fa-image">
+		</item>			
+			
+	
+</tiles>

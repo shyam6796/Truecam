@@ -1,0 +1,48 @@
+<?php 
+$page_id="[[:PAGE_ID:]]";
+// Connect to Database
+include('connect_api.php');
+// You have DB object now use it as $db->
+//First Check for API key if API key is valid then proceed other stop excute script
+// Which service requested is given in params named "service"
+// Response Structure given below.
+/* $ack=array(
+			"ack"=>1/0,(1= success,0=failure)
+			"ack_msg"=>"Message will printed on View",("This message will be shown to user so make it user readable not for developers")
+			"developer_msg"=>"Message for debugging",("This message will be shown to developer on debug mode")
+			"extra"=>array("requested_params"=>$_REQUEST,"other"=>array()),"Extra field contains requested params array which returns all the requested params and other array will contains extra params which you want to show on debug mode"
+		)
+	echo json_encode($ack);
+	
+*/
+
+if($is_valid_api_key)
+{	
+	if($is_valid_service)
+	{
+		// INCLUDE CLASS
+		[[:PAGE_CLASS:]]
+		
+		[[:AJAX_SERVICES:]]
+
+	}
+	else
+	{
+		$ack=array( "ack"=>1,
+				"ack_msg"=>"Internal error!!",
+				"developer_msg"=>"Service Parameter missing or not registered!!",				
+			);
+		$db->printJSON($ack);
+	}
+
+	
+}
+else
+{
+	$ack=array( "ack"=>0,
+				"ack_msg"=>"Internal error!!",
+				"developer_msg"=>"Check your API Key or contact Admin",				
+			);
+	$db->printJSON($ack);
+}
+?>		
