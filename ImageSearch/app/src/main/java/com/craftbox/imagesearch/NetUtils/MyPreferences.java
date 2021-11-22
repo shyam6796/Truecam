@@ -6,9 +6,7 @@ import android.content.SharedPreferences;
 import com.craftbox.imagesearch.Custom.AESCrypt;
 
 
-/**
- * Created by CRAFT BOX on 1/23/2017.
- */
+
 
 public class MyPreferences {
 
